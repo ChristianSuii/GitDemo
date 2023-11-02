@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart Quantity</title>
+</head>
+<body>
+  <p>Cart Quantity</p>
+  <button onclick="console.log(`Cart Quantity: ${cartQuantity}`)">Show Quantity</button>
+
+  <button onclick="
+    cartQuantity++;
+    (cartQuantity > 10) ? alert(`The cart is full, don't update the quantity`) : console.log(`Cart Quantity: ${cartQuantity}
+    `)
+  ">Add to Cart</button>
+
+  <button onclick="cartQuantity += 2; console.log(`Cart Quantity: ${cartQuantity}`)">+2</button>
+
+  <button onclick="cartQuantity = cartQuantity + 3; console.log(`Cart Quantity: ${cartQuantity}`)">+3</button>
+
+  <button onclick="cartQuantity = 0; console.log(`Cart was reset.\nCart Quantity: ${cartQuantity}`)">Reset Cart</button>
+
+  <button onclick="cartQuantity--; console.log(`Cart Quantity: ${cartQuantity}`)">Remove from cart</button>
+
+  <button onclick="
+    cartQuantity -= 2;
+    (cartQuantity < 0) ? alert('Not enough items in the cart') : console.log(`Cart Quantity: ${cartQuantity}`)
+  ">-2</button>
+
+  <button onclick="
+    cartQuantity = cartQuantity - 3; 
+    (cartQuantity < 0) ? alert('Not enough items in the cart') : console.log(`Cart Quantity: ${cartQuantity}`)
+  ">-3</button>
+  
+  <script src="/jsvar.js"></script>
+</body>
+</html>

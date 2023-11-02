@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ROCK-PAPER-SCISSORS</title>
+</head>
+<body>
+  <p>Rock Paper Scissors</p>
+  <button onclick="
+    const compMove = pickCompMove();//This is the new step one which is gotten from the old step one whichb is now a function  called pickCompMove in our js script.Read more below in the paper button.
+
+    //Step 2: Compare the moves to get the result
+    let result = '';
+
+    if (compMove === 'rock') {
+      result = 'Tie.';
+    } else if (compMove === 'paper') {
+      result = 'You lose.'
+    } else if (compMove === 'scissors') {
+      result = 'You win.'
+    }
+
+    //Step 3: Display the result in a popup
+    alert(`You picked rock. Computer picked ${compMove}. ${result}`)
+  ">Rock</button>
+  <button onclick="
+    const compMove = pickCompMove();//We call this function here so whenever we click the button then the function is called here instead of in the js script file since the script run first when the page is loaded.
+
+    //Step 2: Compare the moves to get the result
+    let result = '';
+
+    if (compMove === 'rock') {
+      result = 'You win.';
+    } else if (compMove === 'paper') {
+      result = 'Tie.'
+    } else if (compMove === 'scissors') {
+      result = 'You lose.'
+    }
+
+    //Step 3: Display the result in a popup
+    alert(`You picked paper. Computer picked ${compMove}. ${result}`)
+  ">Paper</button>
+  <button onclick="
+  //*once we click this button(i.e executing the 'onclick'), we run/call the pickCompMove function below.
+    const compMove = pickCompMove();
+  //**That is to say the code jumps down to script tag and runs all the code in our js files from start to buttom and then returns it in the line of code above.
+  //***Afterwards we store the return value in a new variable here called compMove as seen above.
+
+  //****Finally we use the new compMove variable below in the if statement below.
+    let result = '';
+
+    if (compMove === 'rock') {
+      result = 'You lose.';
+    } else if (compMove === 'paper') {
+      result = 'You win.'
+    } else if (compMove === 'scissors') {
+      result = 'Tie.'
+    }
+
+    //Step 3: Display the result in a popup
+    alert(`You picked scissors. Computer picked ${compMove}. ${result}`)
+  ">Scissors</button>
+
+  <script src="/rps.js"></script>
+</body>
+</html>
+
+
+-------------JAVASCRIPT FILE SIDE----------------------------
+
+//let compMove = '';We created this variable outside of the function so as to it being restricted to the scope of the pickCompMove function i.e we made it a global variable and we use 'let' so it can be reassigned freely whenever it's called within the scope of the pickCompMove function.
+
+//***That is to say the code generates a random number using Math.random(), and the stores this random number in the variable randNum. Then it converts the random number into a move using the if statement stored in the function below and the stores the computer move in another variable namely compMove. Afterwards the function then returns the compMove variable when the function below is called or ran.
+
+
+function pickCompMove() {
+  const randNum = Math.random();//Step 1: Generate random number
+
+  let compMove = '';
+  //Then convert the random number to a move
+  if (randNum >= 0 && randNum < 1/3) {
+    compMove = 'rock';
+  } else if (randNum >= 1/3 && randNum < 2/3) {
+    compMove = 'paper';
+  } else if (randNum >= 2/3 && randNum < 1) {
+    compMove = 'scissors';
+  }
+
+  return compMove;
+} 
+
+
+
+
+
+
+
